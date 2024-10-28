@@ -33,16 +33,13 @@ int main() {
     int n, l = 0;
     cin >> n;
     int sums[n - 1];
-    Student k;
-    k.input();
-    int ks = k.calculateTotalScore();
-    for (int i = 0; i < n - 1; i++){
+    for (int i = 0; i < n; i++){
         Student std;
         std.input();
         sums[i] = std.calculateTotalScore();
     }
-    for (int i2 = 0; i2 < n - 1; i2++){
-        if (sums[i2] > ks){
+    for (int i2 = 1; i2 < n; i2++){
+        if (sums[i2] > sums[0]){
             l++;
         }
     }
