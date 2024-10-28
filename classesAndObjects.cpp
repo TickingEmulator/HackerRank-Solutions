@@ -10,13 +10,9 @@ class Student {
         int scores[5];
     public:
       void input(){
-          int a,b,c,d,e;
-          cin >> a >> b >> c >> d >> e;
-          scores[0] = a;
-          scores[1] = b;
-          scores[2] = c;
-          scores[3] = d;
-          scores[4] = e;
+          for (int i = 0; i < 5; i++){
+              cin >> scores[i];
+          }
       }
       int calculateTotalScore(){
           int s;
@@ -33,13 +29,16 @@ int main() {
     int n, l = 0;
     cin >> n;
     int sums[n - 1];
-    for (int i = 0; i < n; i++){
+    Student k;
+    k.input();
+    int ks = k.calculateTotalScore();
+    for (int i = 0; i < n - 1; i++){
         Student std;
         std.input();
         sums[i] = std.calculateTotalScore();
     }
-    for (int i2 = 1; i2 < n; i2++){
-        if (sums[i2] > sums[0]){
+    for (int i2 = 0; i2 < n - 1; i2++){
+        if (sums[i2] > ks){
             l++;
         }
     }
