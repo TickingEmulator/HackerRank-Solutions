@@ -34,19 +34,11 @@ class Student {
         void set_standard(){
             cin >> standard;
         }
-        string to_string(bool t){
-            ss.str("");
-            if (t){
-                ss << lastName << ", " << firstName;
-                return ss.str();
-            }else{
-                ss << age << "," << firstName << "," << lastName << "," << standard;
-                return ss.str();
-            }
-            return "";
+        string to_string(){
+            ss << age << "," << firstName << "," << lastName << "," << standard;
+            return ss.str();
         }
 };
-
 
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
@@ -55,6 +47,6 @@ int main() {
       s.set_first_name();
       s.set_last_name();
       s.set_standard();
-      cout << s.get_age() << "\n" << s.to_string(true) << "\n" << s.get_standard() << "\n\n" << s.to_string(false);
+      cout << s.get_age() << "\n" << s.get_last_name() << ", " << s.get_first_name() << "\n" << s.get_standard() << "\n\n" << s.to_string();
     return 0;
 }
